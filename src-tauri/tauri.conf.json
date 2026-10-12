@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Music Maestro",
+  "version": "0.1.0",
+  "identifier": "com.soundtrackgeek.musicmaestro",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1436",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Music Maestro",
+        "width": 1440,
+        "height": 960,
+        "minWidth": 960,
+        "minHeight": 700,
+        "backgroundColor": "#10100f"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost data:; media-src 'self' asset: http://asset.localhost blob:; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost; font-src 'self' data:",
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$LOCALAPPDATA/MusicMaestro/outputs/**", "$APPLOCALDATA/outputs/**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "resources": {
+      "resources/worker.py": "engine/worker.py",
+      "resources/engine-manifest.json": "engine/engine-manifest.json",
+      "resources/runtime-lock.txt": "engine/runtime-lock.txt",
+      "resources/uv.exe": "engine/uv.exe",
+      "resources/yue2_infer-0.1.6-py3-none-any.whl": "engine/yue2_infer-0.1.6-py3-none-any.whl",
+      "resources/UV-LICENSE-APACHE.txt": "engine/UV-LICENSE-APACHE.txt",
+      "resources/UV-LICENSE-MIT.txt": "engine/UV-LICENSE-MIT.txt",
+      "resources/MANROPE-LICENSE.txt": "engine/MANROPE-LICENSE.txt",
+      "resources/IBM-PLEX-MONO-LICENSE.txt": "engine/IBM-PLEX-MONO-LICENSE.txt"
+    },
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}

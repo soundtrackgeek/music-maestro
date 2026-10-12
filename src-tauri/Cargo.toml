@@ -1,0 +1,26 @@
+[package]
+name = "music-maestro"
+version = "0.1.0"
+description = "A private music studio powered by YuE2"
+authors = ["Music Maestro"]
+edition = "2021"
+
+[lib]
+name = "music_maestro_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.38", features = ["bundled"] }
+uuid = { version = "1", features = ["v4"] }
+sysinfo = "0.37"
+
+[profile.release]
+lto = "thin"
+strip = true
