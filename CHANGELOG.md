@@ -15,3 +15,4 @@
 ### Fixed
 - Unicode progress messages survive legacy Windows pipe encodings when the installed GUI launches its worker.
 - The play/pause icon keeps its contrast when hovered, and closing the studio guide restores keyboard focus.
+- Published installer instructions and checksums use GitHub's asset filename.

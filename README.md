@@ -6,7 +6,7 @@ A private Windows music studio powered by [YuE2-3B](https://huggingface.co/m-a-p
 
 ## Install and create
 
-Download the [Windows x64 installer](https://github.com/soundtrackgeek/music-maestro/releases/tag/v0.1.0) and run `Music Maestro_0.1.0_x64-setup.exe`. Open **Engine → Set up music engine**. Music Maestro provisions its own Python 3.12 environment, installs the pinned CUDA runtime, downloads YuE2-3B and its listening decoder, verifies their checksums, and checks CUDA/BF16 support. No Python installation, terminal, Hugging Face account, API key, or administrator account is needed. The NVIDIA driver must already be installed.
+Download the [Windows x64 installer](https://github.com/soundtrackgeek/music-maestro/releases/tag/v0.1.0) and run the downloaded `.exe`. Open **Engine → Set up music engine**. Music Maestro provisions its own Python 3.12 environment, installs the pinned CUDA runtime, downloads YuE2-3B and its listening decoder, verifies their checksums, and checks CUDA/BF16 support. No Python installation, terminal, Hugging Face account, API key, or administrator account is needed. The NVIDIA driver must already be installed.
 
 Setup needs internet access, approximately **7.8 GB of model downloads**, approximately **3 GB of runtime downloads**, and around **20 GB free disk space** for the installed environment and download cache. Progress stays visible across pages. Pause setup or close the app; **Resume setup** reuses verified files and resumes partial model downloads. Use **Verify & repair engine** to check or repair a damaged installation. Models are downloaded directly from the authors rather than included in the installer.
 
